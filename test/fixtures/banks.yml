@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+piggy:
+  name: Piggy Bank
+  service_url: https://piggybank.fake
+
+champaign:
+  name: Champaign Bank
+  service_url: MyString

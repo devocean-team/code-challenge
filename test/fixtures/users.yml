@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+luke:
+  id: 1
+  username: Luke Skywalker
+  login_strike: 6
+  last_login: <%= Date.yesterday.strftime("%Y-%m-%d") %>
+  points: 300
+  bank: piggy
+
+leia:
+  id: 2
+  username: Leia Organa
+  login_strike: 1
+  last_login: <%= Date.today.strftime("%Y-%m-%d") %>
+  points: 0
+  bank: champaign
+
+han:
+  id: 3
+  username: Han Solo
+  login_strike: 1
+  last_login: <%= 3.days.ago.strftime("%Y-%m-%d") %>
+  points: 5000
+  bank: champaign

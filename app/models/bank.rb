@@ -1,15 +1,12 @@
-# Flourish test
+class Bank < ApplicationRecord
+  def savings_account(user_id)
+    @user_id = user_id
+    if accounts = user_accounts
+      savings = accounts.extract! { |account| account[:type] == 'SAVINGS_ACCOUNT' }
+      return savings[0] unless savings.empty?
+    end
+  end
 
-## Assumptions:
-
-- No authentication needed for the API endpoints
-- Users can have accounts in only one bank
-
-## Notes:
-
-- In order to load this api, and have it work correctly, the connection to the bank endpoint has been commented and its response hardcoded.
-
-```
   def user_accounts
     # response = Excon.get("#{service_url}/api/v1/user/#{@user_id}/accounts")
     # return nil if response.status != 200
@@ -20,4 +17,4 @@
       { type: 'OTHER_ACCOUNT', amount: 200 }
     ]
   end
-```
+end
